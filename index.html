@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Report</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <span id="top">
+        <h3 id="name">Weather Report for {{ weather_data.city_name }}</h3>
+        <form action="/" method="POST">
+            <label for="city">Enter City:</label>
+            <input type="text" id="city" name="city">
+            <input type="submit" id="sbmt" value="Get Weather">
+        </form>
+    </span>
+    
+    <!-- Form for inputting the city -->
+
+
+    <div>
+        <p>Country Code: {{ weather_data.country_code }}</p>
+        <p>Datetime: {{ weather_data.datetime }}</p>
+        <p>Timezone: {{ weather_data.timezone }}</p>
+    </div>
+
+    <p id="temp">Temperature: {{ weather_data.app_temp }}°C</p>
+    
+    <p id="weDes">Weather Description: {{ weather_data.weather.description }}</p>
+    <p id="Hum">Humidity: {{ weather_data.rh }}%</p>
+    <p id="AQI">Air Quality Index (AQI): {{ weather_data.aqi }}</p>
+
+    <div>
+        <p id="lat">Latitude: {{ weather_data.lat }}</p>
+        <p id="lon">Longitude: {{ weather_data.lon }}</p>
+    </div>
+    <div>
+        <p id="sr">Sunrise Time: {{ weather_data.sunrise }}</p>
+        <p id="st">Sunset Time: {{ weather_data.sunset }}</p>
+    </div>
+    <div>
+        <p id="wd">Wind Direction: {{ weather_data.wind_cdir_full }}</p>
+        <p id="ws">Wind Speed: {{ weather_data.wind_spd }} m/s</p>
+    </div>
+
+    <svg id="hero" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none">
+        <path class="elementor-shape-fill" d="M421.9,6.5c22.6-2.5,51.5,0.4,75.5,5.3c23.6,4.9,70.9,23.5,100.5,35.7c75.8,32.2,133.7,44.5,192.6,49.7
+        c23.6,2.1,48.7,3.5,103.4-2.5c54.7-6,106.2-25.6,106.2-25.6V0H0v30.3c0,0,72,32.6,158.4,30.5c39.2-0.7,92.8-6.7,134-22.4
+        c21.2-8.1,52.2-18.2,79.7-24.2C399.3,7.9,411.6,7.5,421.9,6.5z"></path>
+    </svg>	
+
+    <script src="script.js"></script> <!-- Include your JavaScript file -->
+</body>
+</html>
